@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#0f0f1a"/>
+    </linearGradient>
+    <linearGradient id="cloud" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b7355"/>
+      <stop offset="50%" style="stop-color:#6b5344"/>
+      <stop offset="100%" style="stop-color:#5a4636"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#ff8a80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="500" fill="url(#bg)"/>
+
+  <!-- Fart clouds left -->
+  <g transform="translate(150,250)" opacity="0.7">
+    <ellipse cx="-30" cy="-10" rx="50" ry="35" fill="url(#cloud)"/>
+    <ellipse cx="30" cy="-25" rx="60" ry="40" fill="url(#cloud)"/>
+    <ellipse cx="0" cy="15" rx="65" ry="45" fill="url(#cloud)"/>
+  </g>
+
+  <!-- Fart clouds right -->
+  <g transform="translate(874,250)" opacity="0.7">
+    <ellipse cx="30" cy="-10" rx="50" ry="35" fill="url(#cloud)"/>
+    <ellipse cx="-30" cy="-25" rx="60" ry="40" fill="url(#cloud)"/>
+    <ellipse cx="0" cy="15" rx="65" ry="45" fill="url(#cloud)"/>
+  </g>
+
+  <!-- Stink lines left -->
+  <g stroke="#98d982" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M120,150 Q100,120 120,90"/>
+    <path d="M160,140 Q145,100 165,70"/>
+    <path d="M200,155 Q190,125 210,100"/>
+  </g>
+
+  <!-- Stink lines right -->
+  <g stroke="#98d982" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.6">
+    <path d="M904,150 Q924,120 904,90"/>
+    <path d="M864,140 Q879,100 859,70"/>
+    <path d="M824,155 Q834,125 814,100"/>
+  </g>
+
+  <!-- Title -->
+  <text x="512" y="200" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="url(#title)">FART</text>
+  <text x="512" y="280" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="72" font-weight="900" fill="url(#title)">SOUNDBOARD</text>
+
+  <!-- Subtitle -->
+  <text x="512" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#8888aa">14 Effects • 7 Sounds • Endless Fun</text>
+
+  <!-- Sound wave decorations -->
+  <g stroke="#e94560" stroke-width="3" fill="none" opacity="0.5">
+    <path d="M300,380 Q280,400 300,420"/>
+    <path d="M270,370 Q240,400 270,430"/>
+    <path d="M724,380 Q744,400 724,420"/>
+    <path d="M754,370 Q784,400 754,430"/>
+  </g>
+
+  <!-- Emoji accents -->
+  <text x="380" y="420" font-size="40" opacity="0.8">💨</text>
+  <text x="600" y="420" font-size="40" opacity="0.8">🎛️</text>
+</svg>
