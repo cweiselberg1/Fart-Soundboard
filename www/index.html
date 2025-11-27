@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <title>💨 Fart Soundboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <h1>💨 FART SOUNDBOARD</h1>
+            <button class="fx-toggle" id="fxToggle">🎛️ FX</button>
+        </header>
+
+        <!-- Sound Pad Grid -->
+        <div class="pad-grid" id="padGrid">
+            <button class="pad" data-sound="classic" data-color="#ff6b6b">
+                <span class="pad-icon">💨</span>
+                <span class="pad-label">Classic</span>
+            </button>
+            <button class="pad" data-sound="squeaker" data-color="#4ecdc4">
+                <span class="pad-icon">🎵</span>
+                <span class="pad-label">Squeaker</span>
+            </button>
+            <button class="pad" data-sound="rumbler" data-color="#45b7d1">
+                <span class="pad-icon">🌊</span>
+                <span class="pad-label">Rumbler</span>
+            </button>
+            <button class="pad" data-sound="machinegun" data-color="#96ceb4">
+                <span class="pad-icon">🔫</span>
+                <span class="pad-label">Machine Gun</span>
+            </button>
+            <button class="pad" data-sound="bubbly" data-color="#dda0dd">
+                <span class="pad-icon">🫧</span>
+                <span class="pad-label">Bubbly</span>
+            </button>
+            <button class="pad" data-sound="thunderclap" data-color="#f39c12">
+                <span class="pad-icon">⚡</span>
+                <span class="pad-label">Thunder</span>
+            </button>
+            <button class="pad" data-sound="ripper" data-color="#e74c3c">
+                <span class="pad-icon">🔥</span>
+                <span class="pad-label">Ripper</span>
+            </button>
+            <button class="pad random" data-sound="random" data-color="#9b59b6">
+                <span class="pad-icon">🎲</span>
+                <span class="pad-label">Random</span>
+            </button>
+        </div>
+
+        <!-- Effects Panel (slide up) -->
+        <div class="fx-panel" id="fxPanel">
+            <div class="fx-header">
+                <h2>🎛️ Effects</h2>
+                <button class="fx-close" id="fxClose">✕</button>
+            </div>
+
+            <div class="fx-section">
+                <h3>Time & Pitch</h3>
+                <div class="knob-row">
+                    <div class="knob-container">
+                        <div class="knob" data-param="speed" data-min="0.5" data-max="2" data-default="1">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Speed</span>
+                        <span class="knob-value" id="speed-val">1.0x</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="pitch" data-min="0.5" data-max="2" data-default="1">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Pitch</span>
+                        <span class="knob-value" id="pitch-val">1.0x</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="reverb" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Reverb</span>
+                        <span class="knob-value" id="reverb-val">0%</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="delay" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Delay</span>
+                        <span class="knob-value" id="delay-val">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fx-section">
+                <h3>Distortion & Modulation</h3>
+                <div class="knob-row">
+                    <div class="knob-container">
+                        <div class="knob" data-param="distortion" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Distort</span>
+                        <span class="knob-value" id="distortion-val">0%</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="bitcrush" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Bitcrush</span>
+                        <span class="knob-value" id="bitcrush-val">0%</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="chorus" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Chorus</span>
+                        <span class="knob-value" id="chorus-val">0%</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="tremolo" data-min="0" data-max="1" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Tremolo</span>
+                        <span class="knob-value" id="tremolo-val">0%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fx-section">
+                <h3>3-Band EQ</h3>
+                <div class="knob-row">
+                    <div class="knob-container">
+                        <div class="knob" data-param="eqLow" data-min="-20" data-max="20" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Low</span>
+                        <span class="knob-value" id="eqLow-val">0 dB</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="eqMid" data-min="-20" data-max="20" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">Mid</span>
+                        <span class="knob-value" id="eqMid-val">0 dB</span>
+                    </div>
+                    <div class="knob-container">
+                        <div class="knob" data-param="eqHigh" data-min="-20" data-max="20" data-default="0">
+                            <div class="knob-inner">
+                                <div class="knob-grip"></div>
+                            </div>
+                            <svg class="knob-track" viewBox="0 0 100 100">
+                                <circle class="track-bg" cx="50" cy="50" r="45"/>
+                                <circle class="track-fill" cx="50" cy="50" r="45"/>
+                            </svg>
+                        </div>
+                        <span class="knob-label">High</span>
+                        <span class="knob-value" id="eqHigh-val">0 dB</span>
+                    </div>
+                    <div class="knob-container">
+                        <button class="reset-btn" id="resetFx">🔄 Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay for FX panel -->
+        <div class="overlay" id="overlay"></div>
+    </div>
+
+    <script src="js/audio-engine.js"></script>
+    <script src="js/knob.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

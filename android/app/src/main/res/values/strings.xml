@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Fart Soundboard</string>
+    <string name="title_activity_main">Fart Soundboard</string>
+    <string name="package_name">com.fartboard.app</string>
+    <string name="custom_url_scheme">com.fartboard.app</string>
+</resources>
