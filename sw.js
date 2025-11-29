@@ -1,9 +1,11 @@
 // Service Worker for offline support
-const CACHE_NAME = 'fartboard-v1';
+const CACHE_NAME = 'fartboard-v22';
 const ASSETS = [
     '/',
     '/index.html',
     '/css/style.css',
+    '/icon-192.png',
+    '/fartboarduilogo.png',
     '/js/audio-engine.js',
     '/js/knob.js',
     '/js/app.js',

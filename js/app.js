@@ -54,7 +54,8 @@ class FartSoundboard {
 
                 // Visual feedback
                 pad.classList.add('playing');
-                setTimeout(() => pad.classList.remove('playing'), 200);
+                setTimeout(() => pad.classList.remove('playing'), 1000);
+
 
                 // Haptic feedback
                 if (navigator.vibrate) {

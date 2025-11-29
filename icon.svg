@@ -1,4 +1,49 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-  <rect width="192" height="192" rx="40" fill="#1a1a2e"/>
-  <text x="96" y="120" text-anchor="middle" font-size="100">💨</text>
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+    <linearGradient id="buttGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffb7d5"/>
+      <stop offset="100%" style="stop-color:#ff8ab4"/>
+    </linearGradient>
+    <linearGradient id="fartGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a8e063;stop-opacity:0.9"/>
+      <stop offset="100%" style="stop-color:#56ab2f;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="192" height="192" rx="40" fill="url(#bgGrad)"/>
+
+  <!-- Fart clouds (behind butt) -->
+  <g opacity="0.85">
+    <ellipse cx="155" cy="85" rx="22" ry="12" fill="url(#fartGrad)"/>
+    <ellipse cx="165" cy="100" rx="18" ry="10" fill="url(#fartGrad)"/>
+    <ellipse cx="158" cy="115" rx="15" ry="8" fill="url(#fartGrad)"/>
+    <ellipse cx="148" cy="70" rx="12" ry="7" fill="url(#fartGrad)" opacity="0.6"/>
+    <ellipse cx="170" cy="125" rx="10" ry="6" fill="url(#fartGrad)" opacity="0.5"/>
+  </g>
+
+  <!-- Cartoon Butt -->
+  <g transform="translate(20, 45)">
+    <!-- Left cheek -->
+    <ellipse cx="45" cy="60" rx="40" ry="45" fill="url(#buttGrad)"/>
+    <!-- Right cheek -->
+    <ellipse cx="95" cy="60" rx="40" ry="45" fill="url(#buttGrad)"/>
+    <!-- Center crack line -->
+    <path d="M70 20 Q70 60 70 100" stroke="#e8779c" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- Highlight on left cheek -->
+    <ellipse cx="35" cy="45" rx="12" ry="8" fill="white" opacity="0.3"/>
+    <!-- Highlight on right cheek -->
+    <ellipse cx="105" cy="45" rx="12" ry="8" fill="white" opacity="0.3"/>
+  </g>
+
+  <!-- Small stink lines -->
+  <g stroke="#7cb342" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.7">
+    <path d="M140 75 Q145 70 150 75 Q155 80 160 75"/>
+    <path d="M145 95 Q150 90 155 95 Q160 100 165 95"/>
+    <path d="M138 110 Q143 105 148 110"/>
+  </g>
 </svg>

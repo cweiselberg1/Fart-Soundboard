@@ -1,24 +1,39 @@
 {
-    "name": "Fart Soundboard",
-    "short_name": "FartBoard",
-    "description": "The ultimate fart soundboard with audio effects",
+    "name": "Fartboard - Advanced Audio Synthesis .. with farts!",
+    "short_name": "Fartboard",
+    "description": "The ultimate fart soundboard with real-time audio effects. Perfect for pranks, parties, and laughs!",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0f0f1a",
-    "theme_color": "#1a1a2e",
-    "orientation": "portrait",
+    "background_color": "#0f0f23",
+    "theme_color": "#0f0f23",
+    "orientation": "portrait-primary",
+    "categories": ["entertainment", "games"],
     "icons": [
         {
             "src": "icon-192.png",
             "sizes": "192x192",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
+        },
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
         },
         {
             "src": "icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
-            "purpose": "any maskable"
+            "purpose": "any"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
         }
-    ]
+    ],
+    "screenshots": [],
+    "prefer_related_applications": false
 }
